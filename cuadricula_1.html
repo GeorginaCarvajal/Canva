@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body><h1>Canvas basico - Rectangulos</h1>
+
+    <canvas id="chessboard" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById('chessboard');
+        const ctx = canvas.getContext('2d');
+        const cellSize = canvas.width / 10;
+
+        for (let row = 0; row < 10; row++) {
+            for (let col = 0; col < 10; col++) {
+                if ((row + col) % 2 === 0) {
+                    ctx.fillStyle = '#fff'; 
+                } else {
+                    ctx.fillStyle = '#000'; 
+                }
+                ctx.fillRect(col * cellSize, row * cellSize, cellSize, cellSize);
+            }
+        }
+    </script>
+</body>
+</html>
